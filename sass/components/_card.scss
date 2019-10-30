@@ -1,0 +1,129 @@
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+  &__side {
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    height: 52rem;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    overflow: hidden;
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      &--1 {
+        background-image: linear-gradient(($color-third), ($color-third-light));
+      }
+      &--2 {
+        background-image: linear-gradient(($color-secondary), ($color-secondary-light));
+      }
+      &--3 {
+        background-image: linear-gradient(($color-primary), ($color-primary-light));
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    &--1 {
+      background-image: url(../../img/Capture-1.PNG);
+      background-position: center;
+    }
+    &--2 {
+      background-image: url(../img/nat-5.jpg);
+    }
+    &--3 {
+      background-image: url(../img/nat-5.jpg);
+    }
+  }
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 20rem;
+    right: 3rem;
+  }
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-third, 0.85), rgba($color-third-light, 0.85));
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary, 0.85),
+        rgba($color-secondary-light, 0.85)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba($color-primary, 0.85), rgba($color-primary-light, 0.85));
+    }
+  }
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light;
+        }
+      }
+    }
+  }
+  &__cta {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  @include respond(tab-port) {
+    height: auto;
+    &__side {
+      position: relative;
+      height: auto;
+      width: 100%;
+      border-radius: 0px;
+
+      &--back {
+        text-align: center;
+        transform: rotateY(0);
+      }
+    }
+
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+    }
+  }
+}

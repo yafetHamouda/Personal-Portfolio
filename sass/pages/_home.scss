@@ -1,0 +1,76 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 20rem 0;
+  margin-top: -20vh;
+}
+
+.section-services {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, 0.801),
+      rgba($color-secondary, 0.801),
+      rgba($color-third, 0.801)
+    ),
+    url(../../img/desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: skewY(-7deg);
+  margin-top: -11rem;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-projects {
+  background-color: $color-white;
+  padding: 20rem 0 15rem 0;
+  margin-top: -11rem;
+}
+.section-technologies {
+  background-color: $color-grey-light-1;
+  padding: 15rem 0;
+  margin-top: -10rem;
+  position: relative;
+
+  @include respond(tab-port) {
+    padding: 5rem 0;
+  }
+}
+
+.section-contact {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary, 0.801),
+    rgba($color-secondary, 0.801),
+    rgba($color-third, 0.801)
+  );
+  @include respond(tab-port) {
+    padding: 5rem 0;
+  }
+}
+
+.book {
+  background-image: linear-gradient(135deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 50%, transparent 50%),
+    url(../../img/contact.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 50rem;
+  border-radius: 4px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.75);
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+}
