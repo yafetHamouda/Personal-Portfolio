@@ -2,7 +2,7 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem;
+  height: 55rem;
   &__side {
     transition: all 0.8s ease;
     position: absolute;
@@ -21,7 +21,7 @@
     &--back {
       transform: rotateY(180deg);
       &--1 {
-        background-image: linear-gradient(($color-third), ($color-third-light));
+        background-image: linear-gradient(($color-black), ($color-grey));
       }
       &--2 {
         background-image: linear-gradient(($color-secondary), ($color-secondary-light));
@@ -32,12 +32,12 @@
     }
   }
 
-  &:hover &__side--front {
+  /*   &:hover &__side--front {
     transform: rotateY(-180deg);
   }
   &:hover &__side--back {
     transform: rotateY(0);
-  }
+  } */
 
   &__picture {
     background-size: cover;
@@ -45,14 +45,44 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     &--1 {
-      background-image: url(../../img/Capture-1.PNG);
+      background-image: url(../../img/cms.PNG);
       background-position: center;
     }
     &--2 {
-      background-image: url(../img/nat-5.jpg);
+      background-image: url(../img/firstto100.png);
     }
     &--3 {
-      background-image: url(../img/nat-5.jpg);
+      background-image: url(../img/weather.png);
+    }
+    &--4 {
+      background-image: url(../img/chat4.png);
+    }
+    &--5 {
+      background-image: url(../img/burger.png);
+    }
+    &--6 {
+      background-image: url(../img/api.png);
+    }
+    &--7 {
+      background-image: url(../img/tea.png);
+    }
+    &--8 {
+      background-image: url(../img/nexter.png);
+    }
+    &--9 {
+      background-image: url(../img/trillo.png);
+    }
+    &--10 {
+      background-image: url(../img/todo.png);
+    }
+    &--11 {
+      background-image: url(../img/budget.png);
+    }
+    &--12 {
+      background-image: url(../img/cousina.png);
+    }
+    &--13 {
+      background-image: url(../img/omnifood.png);
     }
   }
   &__heading {
@@ -68,7 +98,7 @@
   &__heading-span {
     padding: 1rem 1.5rem;
     &--1 {
-      background-image: linear-gradient(to right bottom, rgba($color-third, 0.85), rgba($color-third-light, 0.85));
+      background-image: linear-gradient(to right bottom, rgba($color-black, 0.85), rgba($color-grey, 0.85));
     }
     &--2 {
       background-image: linear-gradient(
@@ -82,7 +112,7 @@
     }
   }
   &__details {
-    padding: 3rem;
+    padding: 1rem 0.5rem;
     ul {
       list-style: none;
       width: 80%;
@@ -99,13 +129,15 @@
     }
   }
   &__cta {
+    display: flex;
     position: absolute;
-    top: 25%;
+    top: 75.5%;
     left: 50%;
     transform: translate(-50%, 50%);
   }
 
   @include respond(tab-port) {
+    text-align: center;
     height: auto;
     &__side {
       position: relative;
@@ -120,6 +152,7 @@
     }
 
     &__cta {
+      flex-direction: column;
       position: relative;
       top: 0;
       left: 0;

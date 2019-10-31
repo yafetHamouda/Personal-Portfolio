@@ -11,6 +11,8 @@
     margin: 0 auto;
   }
   &__icons {
+    display: flex;
+    flex-direction: column;
     text-align: center;
   }
 }
